@@ -1,4 +1,4 @@
-%%% File  :  usr_db.erl
+%%% File  :  usr.erl
 %%% Description: Database api for subscribe DB
 -module(usr).
 -include("./templates/usr.hrl").
