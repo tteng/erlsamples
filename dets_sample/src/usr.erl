@@ -12,7 +12,7 @@
 -define(TIMEOUT, 30000).
 
 start() ->
-  start("usrDb").
+  start("usrTabFile").
 
 start(FileName) ->
   register(?MODULE, spawn(?MODULE, init, [FileName, self()])),
@@ -34,7 +34,7 @@ delete_usr(Id) ->
 set_service(Id, Service, Flag) when Flag == true; Flag == false ->
   call({set_service, Id, Service, Flag}).
 
-set_status(Id, Status) when Status == enabled,  Status == disabled ->
+set_status(Id, Status) when Status == enabled;  Status == disabled ->
   call({set_status, Id, Status}).
 
 delete_disabled() ->
